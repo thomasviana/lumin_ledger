@@ -11,8 +11,16 @@
 /// It conveys the idea of an intelligent, AI-driven tool that makes financial record-keeping and analysis both transparent and accessible.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  /// Show the splash screen until Flutter renders its first frame
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  /// When initialization is completed, remove the splash screen
+  FlutterNativeSplash.remove();
   runApp(const MyApp());
 }
 
