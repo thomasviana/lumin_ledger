@@ -1,20 +1,26 @@
-/// "LuminLedger" as a name for a finance tracking app with AI capabilities carries a blend of meanings and connotations:
+/// `LuminLedger` as a name for a finance tracking app with AI capabilities carries a blend of meanings and connotations:
 ///
-/// Lumin: This part of the name derives from "luminous" or "illumination", suggesting clarity, enlightenment, and insight.
+/// `Lumin:` This part of the name derives from "luminous" or "illumination", suggesting clarity, enlightenment, and insight.
 /// In the context of a finance app, it implies bringing light to financial situations, offering clear and insightful views on personal finances.
 ///
-/// Ledger: A ledger is a traditional term in finance and accounting, referring to a book or other collection of financial accounts.
+/// `Ledger:` A ledger is a traditional term in finance and accounting, referring to a book or other collection of financial accounts.
 /// In a modern context, it often refers to detailed records of transactions. This part of the name anchors the app in the world of finance,
 /// implying robust tracking and management of financial records.
 ///
-/// Combined, "LuminLedger" suggests an app that illuminates financial paths, providing clear, insightful, and comprehensive management of personal finances.
-/// It conveys the idea of an intelligent, AI-driven tool that makes financial record-keeping and analysis both transparent and accessible.
+/// Combined, `LuminLedger` suggests an app that illuminates financial paths, providing clear, insightful, and comprehensive management of personal finances.
+/// It conveys the idea of an intelligent, [AI-driven tool] that makes financial record-keeping and analysis both transparent and accessible.
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:lumin_ledger/core/firebase/firebase_options.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   /// Show the splash screen until Flutter renders its first frame
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
