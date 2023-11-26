@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455165020316",
+    "project_id": "lumin-ledger",
+    "storage_bucket": "lumin-ledger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455165020316:android:5a00b2707b16768c730559",
+        "android_client_info": {
+          "package_name": "com.thomasviana.lumin_ledger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4sZRsICJA_tPKPafSTttOCugR2oqICqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
