@@ -1,6 +1,5 @@
 import 'package:injectable/injectable.dart';
-
-import '../../domain.dart';
+import 'package:lumin_ledger/auth/domain.dart';
 
 @injectable
 class LogOut {

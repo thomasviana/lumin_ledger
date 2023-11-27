@@ -7,7 +7,7 @@ import 'package:lumin_ledger/auth/domain.dart';
 class CheckAuthStatus {
   final AuthService _authService;
 
-  CheckAuthStatus(this._authService);
+  const CheckAuthStatus(this._authService);
 
   Stream<bool> call() => _authService.checkAuthStatus();
 }
