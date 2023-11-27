@@ -13,20 +13,29 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:lumin_ledger/core/firebase/firebase_options.dart';
+import 'package:lumin_ledger/app/firebase/firebase_options.dart';
+
+import 'app/di/dependency_injection.dart';
 
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
   /// Show the splash screen until Flutter renders its first frame
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
+  /// Configure dependency injection
+  configureDependencies(Environment.dev);
+
+  /// Initialize Firebase
+  await Firebase.initializeApp(
+    name: const String.fromEnvironment('ENV', defaultValue: 'DEV'),
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   /// When initialization is completed, remove the splash screen
   FlutterNativeSplash.remove();
+
+  /// Run the app
   runApp(const MyApp());
 }
 
@@ -36,7 +45,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
